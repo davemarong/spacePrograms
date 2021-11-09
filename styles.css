@@ -1,0 +1,100 @@
+/* Color 
+Main: #black
+Text: black
+
+
+
+ */
+/* Global */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+img,
+div,
+span,
+ul,
+li,
+a,
+nav {
+  margin: 0;
+  padding: 0;
+  color: rgb(34, 34, 34);
+}
+
+/* Header */
+.header {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.logo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.nav {
+  max-height: 0;
+  transition: all 0.3s;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+.nav li {
+  padding: 10px;
+  padding-left: 20px;
+}
+.nav a {
+  text-decoration: none;
+}
+.nav_container {
+  flex: 3;
+  margin: 20px;
+}
+.hamburger {
+  position: absolute;
+  right: 10px;
+}
+.active {
+  background-color: lightblue;
+}
+@media only screen and (min-width: 600px) {
+  .hamburger {
+    display: none;
+  }
+
+  .header {
+    flex-direction: row;
+  }
+  .nav_container {
+    margin: 0;
+  }
+  .nav_container > .nav {
+    flex-direction: row;
+    justify-content: flex-end;
+    max-height: 100px !important;
+  }
+  .nav li {
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .nav li:hover {
+    background-color: rgb(113, 141, 150);
+  }
+  .active {
+    border-bottom: 2px solid lightblue;
+    background-color: transparent;
+  }
+}
+
+/* Homepage */
+
+/* Space programs */
+
+/* About */
+
+/* Contact */
