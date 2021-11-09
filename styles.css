@@ -1,11 +1,11 @@
-/* Color 
+/* COLOR 
 Main: #black
 Text: black
 
 
 
  */
-/* Global */
+/* GLOBAL */
 body,
 h1,
 h2,
@@ -23,7 +23,7 @@ nav {
   padding: 0;
   color: rgb(34, 34, 34);
 }
-/* Header */
+/* HEADER */
 .header {
   margin: 20px;
   display: flex;
@@ -60,7 +60,64 @@ nav {
 .active {
   background-color: lightblue;
 }
+
+/* HOMEPAGE */
+.heroimage {
+  background-image: url("./assets/images/hero.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.heroimage h1 {
+  color: rgb(235, 235, 235);
+  text-align: center;
+}
+.heroimage p {
+  color: rgb(235, 235, 235);
+  text-align: center;
+  margin: 20px;
+}
+.heroimage button {
+  margin: 0 auto;
+  width: 140px;
+  height: 40px;
+  border-radius: 3px;
+  background-color: lightblue;
+  border: 0;
+  box-shadow: 0px 0px 5px;
+}
+
+.axiomMission {
+  margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.axiomMission h2 {
+  margin: 20px 50px;
+  text-align: center;
+}
+.axiomMission p {
+  margin: 30px;
+}
+.axiomMission img {
+  max-width: 70%;
+}
+/* SPACE PROGRAMS*/
+
+/* ABOUT */
+
+/* CONTACT */
+
+/* MEDIA QUERIES*/
 @media only screen and (min-width: 600px) {
+  /* Header */
   .hamburger {
     display: none;
   }
@@ -87,38 +144,11 @@ nav {
     border-bottom: 2px solid lightblue;
     background-color: transparent;
   }
+  /* Axiom Mission */
+  .axiomMission p {
+    max-width: 700px;
+  }
+  .axiomMission img {
+    max-width: 500px;
+  }
 }
-
-/* Homepage */
-.heroimage {
-  background-image: url("./assets/images/hero.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: auto;
-  min-height: 500px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.heroimage h1 {
-  color: rgb(235, 235, 235);
-  text-align: center;
-  margin: 50px;
-}
-.heroimage button {
-  margin: 0 auto;
-  width: 140px;
-  height: 40px;
-  border-radius: 3px;
-  background-color: lightblue;
-  border: 0;
-  box-shadow: 0px 0px 5px;
-}
-
-/* Space programs */
-
-/* About */
-
-/* Contact */
