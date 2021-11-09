@@ -60,7 +60,27 @@ nav {
 .active {
   background-color: lightblue;
 }
-
+/* FOOTER */
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.footer h3 {
+  width: 100%;
+  text-align: center;
+}
+.footer_item {
+  margin: 10px;
+}
+.footer_hr {
+  width: 200px;
+  border: none;
+  height: 4px;
+  background: lightblue;
+  margin-top: 100px;
+  border-radius: 50px;
+}
 /* HOMEPAGE */
 .heroimage {
   background-image: url("./assets/images/hero.jpg");
