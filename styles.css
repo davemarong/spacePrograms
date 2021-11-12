@@ -2,8 +2,6 @@
 Main: #black
 Text: black
 
-
-
  */
 /* GLOBAL */
 body,
@@ -130,6 +128,74 @@ nav {
   max-width: 70%;
 }
 /* SPACE PROGRAMS*/
+.nextLaunches_Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nextLaunches_Container h2 {
+  width: 100%;
+  text-align: center;
+}
+.nextLaunches_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 250px;
+  height: 75px;
+  box-shadow: 0 0 2px;
+  margin: 10px;
+  padding: 20px;
+}
+
+.nextLaunches_card_table {
+  border-collapse: collapse;
+}
+.nextLaunches_card_table * {
+  padding: 10px;
+  border: 1px solid black;
+}
+.previousLaunches_Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.previousLaunches_Container h2 {
+  width: 100%;
+  text-align: center;
+}
+.previousLaunches_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  /* width: 250px; */
+  max-width: 80%;
+  box-shadow: 0 0 2px;
+  margin: 10px;
+  padding: 20px;
+}
+.previousLaunches_card_table {
+  border-collapse: collapse;
+}
+.previousLaunches_card_table * {
+  padding: 10px;
+  border: 1px solid black;
+}
+.previousLaunches_card_table a {
+  border: 0;
+}
+.previousLaunches_card * {
+  margin: 10px;
+}
+.previousLaunches_card_details {
+  text-align: start;
+}
 
 /* ABOUT */
 
@@ -170,5 +236,35 @@ nav {
   }
   .axiomMission img {
     max-width: 500px;
+  }
+  /* Space Programs */
+  .nextLaunches_Container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .nextLaunches_card {
+    flex: 30%;
+    width: auto;
+    margin: 50px;
+  }
+  .previousLaunches_Container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .previousLaunches_card {
+    flex: 30%;
+    width: auto;
+    margin: 50px;
+  }
+}
+@media only screen and (min-width: 1023px) {
+  /* Space Programs */
+  .nextLaunches_card {
+    flex: 20%;
+    margin: 50px;
+  }
+  .previousLaunches_card {
+    flex: 20%;
+    margin: 50px;
   }
 }
