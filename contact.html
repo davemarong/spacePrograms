@@ -21,6 +21,38 @@
       </nav>
       <img class="hamburger" src="assets/images/hamburger.svg" />
     </header>
+    <main class="contact">
+      <h1>Contact us</h1>
+      <p class="form_message"></p>
+      <form class="contact_form">
+        <div class="contact_form_item">
+          <label class="contact_form_label" for="name">Name</label>
+          <input class="contact_form_input" type="text" name="name" id="name" />
+          <p class="contact_form_message" id="form_name_error"></p>
+        </div>
+        <div class="contact_form_item">
+          <label class="contact_form_label" for="email">Email</label>
+          <input
+            class="contact_form_input"
+            type="text"
+            name="email"
+            id="email"
+          />
+          <p class="contact_form_message" id="form_email_error"></p>
+        </div>
+        <div class="contact_form_item">
+          <label class="contact_form_label" for="textarea">Message</label>
+          <textarea
+            name="textarea"
+            class="contact_form_textarea"
+            id="textarea"
+          ></textarea>
+          <p class="contact_form_message" id="form_textarea_error"></p>
+          <button class="contact_form_button" type="submit">Send</button>
+        </div>
+      </form>
+    </main>
     <script src="script.js"></script>
+    <script src="contact.js"></script>
   </body>
 </html>
