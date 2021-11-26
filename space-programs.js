@@ -49,7 +49,7 @@ const fetchPrograms = async () => {
     return `
     <div class="previousLaunches_card">
       <h2>${launch.name}</h2>
-      <img src=${launch.links.patch.small}>
+      <img width="200px" src=${launch.links.patch.small}>
       <table class="previousLaunches_card_table">
         <tr>
             <th>Launch date</th>
@@ -70,7 +70,7 @@ const fetchPrograms = async () => {
             <th>Spaceflightnow</th>
             <td>${
               launch.links.article
-                ? `<a href=${launch.links.article}>Spaceflightnow</a>`
+                ? `<a href=${launch.links.article}>Link</a>`
                 : "No"
             }</td>
         </tr>
@@ -78,7 +78,7 @@ const fetchPrograms = async () => {
             <th>Wikipedia</th>
             <td>${
               launch.links.wikipedia
-                ? `<a href=${launch.links.wikipedia}>Wikipedia</a>`
+                ? `<a href=${launch.links.wikipedia}>Link</a>`
                 : "No"
             }</td>
         </tr>
@@ -86,7 +86,7 @@ const fetchPrograms = async () => {
             <th>Reddit (campaign)</th>
             <td>${
               launch.links.reddit.campaign
-                ? `<a href=${launch.links.reddit.campaign}>Campaign</a>`
+                ? `<a href=${launch.links.reddit.campaign}>Link</a>`
                 : "No"
             }</td>
         </tr>
@@ -94,7 +94,7 @@ const fetchPrograms = async () => {
             <th>Reddit (launch)</th>
             <td>${
               launch.links.reddit.launch
-                ? `<a href=${launch.links.reddit.launch}>Launch</a>`
+                ? `<a href=${launch.links.reddit.launch}>Link</a>`
                 : "No"
             }</td>
         </tr>
@@ -102,12 +102,14 @@ const fetchPrograms = async () => {
             <th>Reddit (recovery)</th>
             <td>${
               launch.links.reddit.recovery
-                ? `<a href=${launch.links.reddit.recovery}>Recovery</a>`
+                ? `<a href=${launch.links.reddit.recovery}>Link</a>`
                 : "No"
             }</td>
         </tr>
       </table>
-      <p class="previousLaunches_card_details">${launch.details} </p>
+      <p class="previousLaunches_card_details">${
+        launch.details ? launch.details : "No details"
+      } </p>
     </div>`;
   });
 };
