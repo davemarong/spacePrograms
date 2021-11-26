@@ -18,7 +18,7 @@ const sortLaunches = (launches) => {
 const fetchPrograms = async () => {
   const response = await fetch("https://api.spacexdata.com/v4/launches");
   const data = await response.json();
-  const allLaunches = data.slice(-30);
+  const allLaunches = data.slice(-32);
   const [nextLaunches, previousLaunches] = sortLaunches(allLaunches);
   console.log(nextLaunches, previousLaunches);
   nextLaunches_Container.innerHTML += nextLaunches.map((launch, id) => {
