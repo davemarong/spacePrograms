@@ -19,11 +19,12 @@ const fetchPrograms = async () => {
   const response = await fetch("https://api.spacexdata.com/v4/launches");
   const data = await response.json();
   const allLaunches = data.slice(-32);
-  const [nextLaunches, previousLaunches] = sortLaunches(allLaunches);
-  console.log(nextLaunches, previousLaunches);
-  nextLaunches_Container.innerHTML += nextLaunches.map((launch, id) => {
-    let launchDate = launch.date_utc.slice(0, 10);
-    return `
+  let [nextLaunches, previousLaunches] = sortLaunches(allLaunches);
+  console.log(nextLaunches);
+  nextLaunches_Container.innerHTML += nextLaunches
+    .map((launch, id) => {
+      let launchDate = launch.date_utc.slice(0, 10);
+      return `
     <div class="nextLaunches_card">
       <h2>${launch.name}</h2>
       <table class="nextLaunches_card_table">
@@ -33,20 +34,23 @@ const fetchPrograms = async () => {
         </tr>
       </table>
     </div>`;
-  });
-  previousLaunches_Container.innerHTML += previousLaunches.map((launch, id) => {
-    let launchDate = launch.date_utc.slice(0, 10);
-    let capsuleReused;
+    })
+    .join(" ");
 
-    if (launch.fairings === null) {
-      capsuleReused = "No";
-    } else if (launch.fairings.reused === false) {
-      capsuleReused = "No";
-    } else {
-      capsuleReused = "Yes";
-    }
+  previousLaunches_Container.innerHTML += previousLaunches
+    .map((launch, id) => {
+      let launchDate = launch.date_utc.slice(0, 10);
+      let capsuleReused;
 
-    return `
+      if (launch.fairings === null) {
+        capsuleReused = "No";
+      } else if (launch.fairings.reused === false) {
+        capsuleReused = "No";
+      } else {
+        capsuleReused = "Yes";
+      }
+
+      return `
     <div class="previousLaunches_card">
       <h2>${launch.name}</h2>
       <img width="200px" src=${launch.links.patch.small}>
@@ -111,6 +115,7 @@ const fetchPrograms = async () => {
         launch.details ? launch.details : "No details"
       } </p>
     </div>`;
-  });
+    })
+    .join(" ");
 };
 fetchPrograms();
