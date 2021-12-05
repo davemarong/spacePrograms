@@ -1,33 +1,29 @@
-let nextLaunches_Container = document.querySelector(".nextLaunches_Container");
+let futureLaunches_Container = document.querySelector(
+  ".futureLaunches_Container"
+);
 let previousLaunches_Container = document.querySelector(
   ".previousLaunches_Container"
 );
 const sortLaunches = (launches) => {
-  let nextLaunches = [];
-  let previousLaunches = [];
-  launches.map((launch, id) => {
-    if (launch.upcoming === true) {
-      nextLaunches.push(launch);
-    } else if (launch.upcoming === false) {
-      previousLaunches.push(launch);
-    }
-  });
-  return [nextLaunches, previousLaunches];
+  const futureLaunches = launches.filter((launch) => launch.upcoming === true);
+  const previousLaunches = launches.filter(
+    (launch) => launch.upcoming === false
+  );
+  return [futureLaunches, previousLaunches.reverse()];
 };
 
 const fetchPrograms = async () => {
   const response = await fetch("https://api.spacexdata.com/v4/launches");
   const data = await response.json();
   const allLaunches = data.slice(-32);
-  let [nextLaunches, previousLaunches] = sortLaunches(allLaunches);
-  console.log(nextLaunches);
-  nextLaunches_Container.innerHTML += nextLaunches
+  let [futureLaunches, previousLaunches] = sortLaunches(allLaunches);
+  futureLaunches_Container.innerHTML += futureLaunches
     .map((launch, id) => {
       let launchDate = launch.date_utc.slice(0, 10);
       return `
-    <div class="nextLaunches_card">
+    <div class="futureLaunches_card">
       <h2>${launch.name}</h2>
-      <table class="nextLaunches_card_table">
+      <table class="futureLaunches_card_table">
         <tr>
           <th>Launch date</th>
           <td>${launchDate}</td>
